@@ -1,8 +1,9 @@
 <template>
   <div class="hello">
     <img src="@/assets/logo.png">
-    <h1>{{ msg }}</h1>
+    <h1 class="mb-4">{{ msg }}</h1>
     <p>You're viewing the <code>&#060;HelloWorld&#062;</code> component!</p>
+    <p>If this text is white, you've successfully installed Tailwind!</p>
   </div>
 </template>
 
@@ -17,8 +18,12 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+<!-- You can add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@tailwind utilities;
+.hello {
+  @apply .text-white
+}
 h1, h2 {
   font-weight: normal;
 }
