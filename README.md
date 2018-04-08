@@ -1,6 +1,6 @@
-# craft-vue
+# craft-vue-tailwind
 
-All the power of a Vue's webpack template & single file components tailored for a Craft CMS project.
+All the power of a Vue's webpack template & single file components tailored for a Craft CMS project. This fork integrates the Tailwind CSS utility framework & removes unused CSS with Purgecss.
 
 ## What's Included
 
@@ -17,6 +17,7 @@ All the power of a Vue's webpack template & single file components tailored for 
   - Babel compiling
   - CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano)
   - Static assets compiled with version hashes for efficient long-term caching
+  - Removes unused CSS with Purgecss
   - Bundle size analytics
 
 ### Fork It And Make Your Own
@@ -34,6 +35,9 @@ composer create-project chasegiunta/craft-vue PATH -s RC
 # install dependencies
 npm install # yarn
 
+# initialize Tailwind's config file
+./node_modules/.bin/tailwind init
+
 # run dev server (default runs on localhost:8080)
 npm run dev # yarn dev
 
@@ -45,6 +49,8 @@ Only _your assets_ will be served from `localhost:8080` and referenced in the ba
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
+## Tailwind utilities in .vue files
+Using Tailwind utilities (`@apply`, etc.) inside a Vue component is possible, but not necessarily advisable. The problem is that you will have to inject the Tailwind utility classes into the <style> section for your component ([example here](https://github.com/chasegiunta/craft-vue-tailwind/blob/a3a62ea1077aff1515b05d33b41aece47a877d28/src/components/HelloWorld.vue#L23)) . This will cause those styles to be repeated for every component. Purgecss definitely helps alleviate this problem, but you will still end up with some repeating rules in your CSS file. You can read more about it [on this GitHub issue](https://github.com/tailwindcss/tailwindcss/issues/1). The Tailwind team was [considering a way around this](https://github.com/tailwindcss/tailwindcss/pull/169) but at this time have decided not to implement it (yet).
 
 ## Pre-Processors
 
