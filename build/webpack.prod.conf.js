@@ -11,6 +11,10 @@ const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 
+// import Purgecss webpack plugin and glob-all
+const PurgecssPlugin = require('purgecss-webpack-plugin')
+const glob = require('glob-all')
+
 const env = require('../config/prod.env')
 
 const webpackConfig = merge(baseWebpackConfig, {
@@ -50,6 +54,16 @@ const webpackConfig = merge(baseWebpackConfig, {
       // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`, 
       // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
       allChunks: true,
+    }),
+    // Remove unused CSS using purgecss. See https://github.com/FullHuman/purgecss
+    // for more information about purgecss.
+    new PurgecssPlugin({
+      paths: glob.sync([
+        path.join(__dirname, './../templates/**/*.html'),
+        path.join(__dirname, './../templates/**/*.twig'),
+        path.join(__dirname, './../**/*.vue'),
+        path.join(__dirname, './../src/**/*.js')
+      ])
     }),
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
