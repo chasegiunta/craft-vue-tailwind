@@ -1,6 +1,6 @@
 # craft-vue-tailwind
 
-All the power of a Vue's webpack template & single file components tailored for a Craft CMS project. This fork integrates the Tailwind CSS utility framework & removes unused CSS with Purgecss.
+Fork of [craft-vue](https://github.com/chasegiunta/craft-vue) template that integrates the Tailwind CSS utility framework & removes unused CSS with Purgecss.
 
 ## What's Included
 
@@ -28,7 +28,7 @@ You can (and should) fork this repo to create your own boilerplate
 
 ``` bash
 # create & install project
-composer create-project chasegiunta/craft-vue PATH -s RC
+composer create-project chasegiunta/craft-vue-tailwind PATH -s RC
 
 # run Craft's setup command
 
