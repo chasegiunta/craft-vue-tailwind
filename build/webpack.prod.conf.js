@@ -15,6 +15,16 @@ const ManifestPlugin = require('webpack-manifest-plugin')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 const glob = require('glob-all')
 
+// Custom PurgeCSS extractor for Tailwind that allows special characters in
+// class names.
+// 
+// https://github.com/FullHuman/purgecss#extractor
+class TailwindExtractor {
+  static extract(content) {
+    return content.match(/[A-z0-9-:\/]+/g) || [];
+  }
+}
+
 const env = require('../config/prod.env')
 
 const webpackConfig = merge(baseWebpackConfig, {
@@ -63,7 +73,16 @@ const webpackConfig = merge(baseWebpackConfig, {
         path.join(__dirname, './../templates/**/*.twig'),
         path.join(__dirname, './../**/*.vue'),
         path.join(__dirname, './../src/**/*.js')
-      ])
+      ]),
+      extractors: [
+        {
+          extractor: TailwindExtractor,
+
+          // Specify the file extensions to include when scanning for
+          // class names.
+          extensions: ["html", "js", "twig", "vue"]
+        }
+      ]
     }),
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
