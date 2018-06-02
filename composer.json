@@ -1,27 +1,29 @@
 {
   "name": "chasegiunta/craft-vue-tailwind",
-  "description": "Craft CMS",
-  "version": "1.0",
+  "description": "Fork of template that integrates the Tailwind CSS utility framework & removes unused CSS with Purgecss.",
+  "version": "1.03",
   "minimum-stability": "RC",
   "keywords": [
     "craft",
     "cms",
     "craftcms",
-    "project"
+    "project",
+    "vue",
+    "vue.js",
+    "tailwind",
+    "tailwindcss"
   ],
   "license": "MIT",
   "homepage": "https://craftcms.com/",
   "type": "project",
   "support": {
-    "email": "support@craftcms.com",
-    "issues": "https://github.com/craftcms/cms/issues",
-    "forum": "https://craftcms.stackexchange.com/",
-    "source": "https://github.com/craftcms/cms",
-    "docs": "https://craftcms.com/docs",
-    "rss": "https://craftcms.com/changelog.rss"
+    "email": "me@chasegiunta.com",
+    "issues": "https://github.com/chasegiunta/craft-vue-tailwind/issues",
+    "source": "https://github.com/chasegiunta/craft-vue-tailwind",
+    "docs": "https://github.com/chasegiunta/craft-vue-tailwind"
   },
   "require": {
-    "craftcms/cms": "^3.0.0-RC1",
+    "craftcms/cms": "^3.0.0",
     "vlucas/phpdotenv": "^2.4.0",
     "clubstudioltd/craft-asset-rev": "v6.0.0"
   },
