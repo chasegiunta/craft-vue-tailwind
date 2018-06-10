@@ -50,6 +50,7 @@
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
     "purgecss-webpack-plugin": "^0.22.0",
+    "purgecss-whitelister": "^2.1.0",
     "rimraf": "^2.6.0",
     "sane": "^2.5.0",
     "semver": "^5.3.0",

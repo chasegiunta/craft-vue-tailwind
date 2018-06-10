@@ -15,6 +15,9 @@ const ManifestPlugin = require('webpack-manifest-plugin')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 const glob = require('glob-all')
 
+// whitelister for purgecss to help with libraries
+const whitelister = require('purgecss-whitelister')
+
 // Custom PurgeCSS extractor for Tailwind that allows special characters in
 // class names.
 // 
@@ -74,6 +77,8 @@ const webpackConfig = merge(baseWebpackConfig, {
         path.join(__dirname, './../**/*.vue'),
         path.join(__dirname, './../src/**/*.js')
       ]),
+      whitelist: whitelister(config.build.purgecssWhitelist),
+      whitelistPatterns: config.build.purgecssWhitelistPatterns,
       extractors: [
         {
           extractor: TailwindExtractor,
