@@ -1,6 +1,5 @@
-# craft-vue
-
-All the power of a Vue CLI's scaffolding & single file components tailored for a Craft CMS project.
+# craft-vue-tailwind
+Fork of the [craft-vue](https://github.com/chasegiunta/craft-vue) template that integrates the Tailwind CSS utility framework & removes unused CSS with Purgecss.
 
 ## What's Included
 
@@ -17,6 +16,7 @@ All the power of a Vue CLI's scaffolding & single file components tailored for a
   - Babel compiling
   - CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano)
   - Static assets compiled with version hashes for efficient long-term caching
+  - Removes unused CSS with Purgecss. Includes whitelister to keep third-party libraries untouched.
   - Bundle size analytics
 
 ### Fork It And Make Your Own
@@ -42,6 +42,15 @@ composer create-project chasegiunta/craft-vue PATH
 # install dependencies
 npm install # yarn
 
+# initialize Tailwind's config file (tailwind.js)
+./node_modules/.bin/tailwind init
+
+# append shadowLookup experiment flag to end of tailwind.js file
+# (this step will be removed in an upcoming release)
+experiments: {
+    shadowLookup: true,
+}
+
 # run dev server (default runs on localhost:8080)
 npm run dev # yarn dev (alias for 'yarn serve')
 
@@ -58,6 +67,10 @@ You can also run your `dev` & `build` tasks from the GUI to get valuable build s
 After running `npm run build`, the easiest way to test your build files locally is to comment the environment variable in your `.env` file, and refresh the page. This will serve your assets from the build directory, rather than webpack's dev server.
 
 For a detailed explanation on how things work, check out the [Vue CLI docs](https://cli.vuejs.org/).
+
+## Tailwind directives in .vue files
+
+Using Tailwind directives (@apply, etc.) inside of Vue's single file components is now possible with the addition of an expirimental `shadowLookup` flag enabled in your tailwind.js file (added in Tailwind v0.6.2 - hooray!).
 
 ## Pre-Processors
 

@@ -1,3 +1,12 @@
+@tailwind preflight;
+@tailwind components;
+
+/**
+ * Here you would add any of your custom classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ */
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -6,3 +15,5 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+
+@tailwind utilities;
