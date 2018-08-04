@@ -1,6 +1,6 @@
 {
-  "name": "chasegiunta/craft-vue",
-  "description": "Craft CMS + Vue.js Boilerplate",
+  "name": "chasegiunta/craft-vue-tailwind",
+  "description": "Craft CMS + Vue.js + TailwindCSS Boilerplate",
   "keywords": [
     "craft",
     "cms",
@@ -8,14 +8,16 @@
     "project",
     "vue",
     "vue.js",
-    "vue js"
+    "vue js",
+    "tailwind",
+    "tailwindcss"
   ],
   "license": "MIT",
   "homepage": "https://craftcms.com/",
   "type": "project",
   "support": {
     "email": "me@chasegiunta.com",
-    "issues": "https://github.com/chasegiunta/craft-vue/issues"
+    "issues": "https://github.com/chasegiunta/craft-vue-tailwind/issues"
   },
   "require": {
     "craftcms/cms": "^3.0.0",
