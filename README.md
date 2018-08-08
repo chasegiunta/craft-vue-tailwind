@@ -23,8 +23,6 @@ Fork of the [craft-vue](https://github.com/chasegiunta/craft-vue) template that 
 
 You should fork this repo to create your own boilerplate. This scaffold makes no assumptions about pre-processor, babel, or linting configurations.
 
-I've also created a [fork of this boilerplate](https://github.com/chasegiunta/craft-vue-tailwind) that integrates TailwindCSS & Purgecss.
-
 ## Setup
 
 This boilerplate requires Vue CLI 3 be [installed globally on your machine](https://cli.vuejs.org/guide/installation.html).
