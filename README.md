@@ -31,7 +31,7 @@ This boilerplate requires Vue CLI 3 be [installed globally on your machine](http
 
 ``` bash
 # create & install project
-composer create-project chasegiunta/craft-vue PATH
+composer create-project chasegiunta/craft-vue-tailwind PATH
 
 # run Craft's setup & install
 ./craft setup
