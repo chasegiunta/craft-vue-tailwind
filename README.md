@@ -1,9 +1,11 @@
 # craft-vue-tailwind
+
 Fork of the [craft-vue](https://github.com/chasegiunta/craft-vue) template that integrates the Tailwind CSS utility framework & removes unused CSS with Purgecss.
 
 ## What's Included
 
 - `npm run dev` / `yarn dev`: first-in-class development experience.
+
   - Webpack + `vue-loader` for single file Vue components
   - State preserving hot-reload
   - Page reloading on file edits (twig, html, etc)
@@ -27,9 +29,7 @@ You should fork this repo to create your own boilerplate. This scaffold makes no
 
 This boilerplate requires Vue CLI 3 be [installed globally on your machine](https://cli.vuejs.org/guide/installation.html).
 
-
-
-``` bash
+```bash
 # create & install project
 composer create-project chasegiunta/craft-vue-tailwind PATH
 
@@ -68,26 +68,27 @@ After running `npm run build`, the easiest way to test your build files locally 
 
 For a detailed explanation on how things work, check out the [Vue CLI docs](https://cli.vuejs.org/).
 
-## Tailwind directives in .vue files
-
-Using Tailwind directives (@apply, etc.) inside of Vue's single file components is now possible with the addition of an expirimental `shadowLookup` flag enabled in your tailwind.js file (added in Tailwind v0.6.2 - hooray!).
-
 ## Pre-Processors
 
 This boilerplate has pre-configured CSS extraction for most popular CSS pre-processors including LESS, SASS, Stylus, and PostCSS. To use a pre-processor, all you need to do is install the appropriate webpack loader for it. For example, to use SASS:
-``` bash
+
+```bash
 npm install sass-loader node-sass --save-dev
 # yarn add sass-loader node-sass --dev
 ```
+
 Note you also need to install node-sass because sass-loader depends on it as a peer dependency.
 
 Read more about this at https://cli.vuejs.org/guide/css.html#pre-processors
 
 ## Automatic Component Registration
+
 Any vue components placed within `src/components` will be registered with Vue automatically. **This requires their filenames to be in PascalCase**, eg. MyVueComponent.vue
 
 ## Babel Compiling
+
 This boilerplate uses babel-preset-env for configuring babel. [You can read more about it here.](https://cli.vuejs.org/config/#babel)
 
 ## Linting
+
 You can enable linting by adding the `@vue/cli-plugin-eslint` plugin through the GUI `vue ui`.
