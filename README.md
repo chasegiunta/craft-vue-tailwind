@@ -45,12 +45,6 @@ npm install # yarn
 # initialize Tailwind's config file (tailwind.js)
 ./node_modules/.bin/tailwind init
 
-# append shadowLookup experiment flag to end of tailwind.js file
-# (this step will be removed in an upcoming release)
-experiments: {
-    shadowLookup: true,
-}
-
 # run dev server (default runs on localhost:8080)
 npm run dev # yarn dev (alias for 'yarn serve')
 
