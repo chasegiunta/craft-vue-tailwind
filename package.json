@@ -16,7 +16,6 @@
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
     "glob-all": "^3.1.0",
-    "mini-css-extract-plugin": "^0.4.1",
     "purgecss-webpack-plugin": "^1.2.0",
     "purgecss-whitelister": "^2.1.0",
     "vue-template-compiler": "^2.6.0",
