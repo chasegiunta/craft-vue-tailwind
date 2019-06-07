@@ -21,9 +21,9 @@ Fork of the [craft-vue](https://github.com/chasegiunta/craft-vue) template that 
   - Removes unused CSS with Purgecss. Includes whitelister to keep third-party libraries untouched.
   - Bundle size analytics
 
-### Fork It And Make Your Own
+## Fork It And Make Your Own
 
-You should fork this repo to create your own boilerplate. This scaffold makes no assumptions about pre-processors used or linting configurations.
+You should fork this repo to create your own opinionated boilerplate for your setup. This template makes no assumptions about pre-processors, template structure, or linting configurations.
 
 ## Setup
 
@@ -60,7 +60,7 @@ You can also run your `dev` & `build` tasks from the GUI to get valuable build s
 
 If webpack's dev server (`yarn dev`) is not running, Twigpack will serve your assets from the build directory.
 
-For a detailed explanation on how things work, check out the [Vue CLI docs](https://cli.vuejs.org/).
+For a detailed explanation on how things work, check out the [Twigpack docs](https://github.com/nystudio107/craft-twigpack) & [Vue CLI docs](https://cli.vuejs.org/).
 
 ## Pre-Processors
 
