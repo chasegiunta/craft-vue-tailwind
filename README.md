@@ -42,7 +42,7 @@ composer create-project chasegiunta/craft-vue-tailwind PATH
 # install dependencies
 npm install # yarn
 
-# initialize Tailwind's config file (tailwind.js)
+# (optional) initialize Tailwind's config file (tailwind.config.js)
 ./node_modules/.bin/tailwind init
 
 # run dev server (default runs on localhost:8080)
