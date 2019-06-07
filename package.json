@@ -15,12 +15,12 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
+    "filemanager-webpack-plugin": "^2.0.5",
     "glob-all": "^3.1.0",
-    "purgecss-webpack-plugin": "^1.2.0",
+    "purgecss-webpack-plugin": "^1.5.0",
     "purgecss-whitelister": "^2.1.0",
     "vue-template-compiler": "^2.6.0",
-    "webpack-manifest-plugin": "^2.0.4",
-    "filemanager-webpack-plugin": "^2.0.5"
+    "webpack-manifest-plugin": "^2.0.4"
   },
   "postcss": {
     "plugins": {
