@@ -4,11 +4,14 @@ const PurgecssPlugin = require('purgecss-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const whitelister = require('purgecss-whitelister')
 const glob = require('glob-all')
+const FileManagerPlugin = require("filemanager-webpack-plugin");
 
+modern = process.env.VUE_CLI_MODERN_MODE;
+production = process.env.NODE_ENV === "production";
 
 config = {
-  https: false,
-  host: 'localhost',
+  protocol: "http",
+  host: "localhost",
   port: 8080,
   watchDir: 'templates',
   // Whitelist selectors to stop purgecss from removing them from your CSS
@@ -33,35 +36,27 @@ class TailwindExtractor {
 
 module.exports = {
   runtimeCompiler: true,
-  baseUrl: process.env.NODE_ENV === 'production'
-  ? '/'
-  : `${config.https ? 'https' : 'http'}://${config.host}:${config.port}/`,
-  outputDir: 'web/dist',
-  filenameHashing: process.env.NODE_ENV === 'production' ? true : false,
+  publicPath: `${config.protocol}://${config.host}:${config.port}/`,
+  outputDir: "web/dist",
+  filenameHashing: true,
   css: {
     sourceMap: true
   },
   devServer: {
-    // Uncommenting these will lose the 'Network' app access
-    // host: config.host,
-    // port: config.port,
     https: config.https,
-    clientLogLevel: 'info',
-    headers: { 'Access-Control-Allow-Origin': '*' },
+    host: config.host,
+    port: config.port,
+    clientLogLevel: "info",
+    headers: { "Access-Control-Allow-Origin": "*" },
     disableHostCheck: true,
-    before(app, server) {
-      const sane = require('sane')
-      var watcher = sane(path.join(__dirname, config.watchDir), {glob: ['**/*']});
-      watcher.on('change', function (filepath, root, stat) { 
-        console.log('  File saved:', filepath);
-        server.sockWrite(server.sockets, "content-changed");
-      });
-    }
+    contentBase: path.join(__dirname, config.watchDir),
+    watchContentBase: true
   },
   configureWebpack: {
     plugins: [
       new ManifestPlugin({
-        publicPath: '/dist/'
+        fileName: modern ? "manifest.json" : "manifest-legacy.json",
+        publicPath: production ? "/dist/" : "/"
       }),
       new MiniCssExtractPlugin({
         filename: 'css/[name].[contenthash].css'
@@ -80,13 +75,13 @@ module.exports = {
           // Specify the file extensions to include when scanning for class names.
           extensions: ["html", "js", "twig", "vue"]
         }]
+      }),
+      new FileManagerPlugin({
+        onEnd: {
+          // Delete unnecessary index.html file
+          delete: ["./web/dist/index.html"]
+        }
       })
     ]
-  },
-  // Disable building a useless index.html file
-  chainWebpack: config => {
-    config.plugins.delete('html')
-    config.plugins.delete('preload')
-    config.plugins.delete('prefetch')
   }
-}
+};

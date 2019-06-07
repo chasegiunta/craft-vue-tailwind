@@ -1,6 +1,6 @@
 {
-  "name": "craft-vue-tailwind",
-  "version": "2.0.0",
+  "name": "craft-vue-tiailwind",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -10,17 +10,18 @@
   "dependencies": {
     "postcss-import": "^12.0.0",
     "tailwindcss": "^0.7.3",
-    "vue": "^2.5.16"
+    "vue": "^2.6.0"
   },
   "devDependencies": {
-    "@vue/cli-service": "^3.0.0-rc.10",
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
     "glob-all": "^3.1.0",
     "mini-css-extract-plugin": "^0.4.1",
     "purgecss-webpack-plugin": "^1.2.0",
     "purgecss-whitelister": "^2.1.0",
-    "sane": "^3.0.0",
-    "vue-template-compiler": "^2.5.16",
-    "webpack-manifest-plugin": "^2.0.3"
+    "vue-template-compiler": "^2.6.0",
+    "webpack-manifest-plugin": "^2.0.4",
+    "filemanager-webpack-plugin": "^2.0.5"
   },
   "postcss": {
     "plugins": {
@@ -31,7 +32,6 @@
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
+    "last 2 versions"
   ]
 }
