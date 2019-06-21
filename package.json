@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build --modern"
   },
   "dependencies": {
     "postcss-import": "^12.0.0",
