@@ -23,7 +23,7 @@
         <span class="text-green-400">{{ info.environment }}</span> (passed in as
         prop)<br />
 
-        <span class="text-white">DB Name: </span>
+        <span class="text-white">DSN Settings: </span>
         <span class="text-green-400"><slot></slot></span> (passed in through
         slot)
       </code>
@@ -37,9 +37,9 @@ export default {
   props: ["info"],
   data() {
     return {
-      msg: "Hello World"
+      msg: "Hello World",
     };
-  }
+  },
 };
 </script>
 
