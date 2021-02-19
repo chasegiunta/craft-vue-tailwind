@@ -37,7 +37,7 @@ composer create-project chasegiunta/craft-vue-tailwind PATH
 ./craft setup
 
 # install the Twigpack plugin
-./craft install/plugin twigpack
+./craft plugin/install twigpack
 
 # install dependencies
 npm install # yarn
